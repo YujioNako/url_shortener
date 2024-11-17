@@ -71,7 +71,8 @@ if ($data['requests'] > $rateLimit) {
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         original_link VARCHAR(512) NOT NULL,
         short_link VARCHAR(20) NOT NULL,
-        time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        last_used TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
     
     mysqli_query($conn, $sql);
